@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="acpScene" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.PrimaryController">
+   <children>
+      <Label alignment="TOP_CENTER" contentDisplay="TOP" layoutX="377.0" layoutY="17.0" text="Administrator" AnchorPane.leftAnchor="377.0" AnchorPane.rightAnchor="377.0" AnchorPane.topAnchor="10.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <HBox layoutX="70.0" layoutY="58.0" prefHeight="220.0" prefWidth="700.0" spacing="30.0" AnchorPane.leftAnchor="70.0" AnchorPane.topAnchor="58.0">
+         <children>
+            <VBox prefHeight="200.0" prefWidth="246.0" spacing="10.0">
+               <children>
+                  <Label text="Engine Type" />
+                  <ChoiceBox fx:id="cbxEngineType" prefWidth="250.0" />
+                  <Label text="Brand" />
+                  <TextField fx:id="txtCarBrand" prefWidth="200.0" />
+                  <Label prefHeight="20.0" prefWidth="100.0" text="Price" />
+                  <TextField fx:id="txtCarPrice" />
+                  <HBox alignment="TOP_CENTER" prefHeight="30.0" prefWidth="0.0" spacing="40.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#modelAdd" prefHeight="26.0" prefWidth="60.0" text="Add" />
+                        <Button mnemonicParsing="false" onAction="#modelDelete" prefWidth="60.0" text="Delete" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <TableView fx:id="tableViewModel" prefHeight="220.0" prefWidth="450.0">
+              <columns>
+                <TableColumn fx:id="engineTypeColumn" onEditCommit="#engineEdit" prefWidth="150.0" text="Engine" />
+                  <TableColumn fx:id="carBrandColumn" onEditCommit="#brandEdit" prefWidth="150.0" text="Brand" />
+                <TableColumn fx:id="carPriceColumn" onEditCommit="#priceEdit" prefWidth="150.0" text="Price" />
+              </columns>
+            </TableView>
+         </children>
+      </HBox>
+      <HBox layoutX="70.0" layoutY="298.0" prefHeight="220.0" prefWidth="700.0" spacing="30.0" AnchorPane.leftAnchor="70.0">
+         <children>
+            <VBox prefHeight="200.0" prefWidth="250.0" spacing="20.0">
+               <children>
+                  <Label text="Components Name" />
+                  <TextField fx:id="txtComponentName" />
+                  <Label text="Price" />
+                  <TextField fx:id="txtComponentPrice" />
+                  <HBox alignment="TOP_CENTER" prefHeight="30.0" prefWidth="200.0" spacing="40.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#componentAdd" prefHeight="26.0" prefWidth="60.0" text="Add" />
+                        <Button mnemonicParsing="false" onAction="#componentDelete" prefWidth="60.0" text="Delete" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <TableView fx:id="tableViewComponents" prefHeight="220.0" prefWidth="450.0">
+              <columns>
+                <TableColumn fx:id="componentNameColumn" onEditCommit="#componentNameEdit" prefWidth="225.0" text="Name" />
+                <TableColumn fx:id="componentPriceColumn" onEditCommit="#componentPriceEdit" prefWidth="225.0" text="Price" />
+              </columns>
+            </TableView>
+         </children></HBox>
+      <VBox prefHeight="200.0" prefWidth="100.0" spacing="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="30.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#goToCustomer" prefHeight="50.0" prefWidth="100.0" text="Customer View" />
+            <Button mnemonicParsing="false" onAction="#save" prefHeight="50.0" prefWidth="100.0" text="Save" />
+            <Button mnemonicParsing="false" onAction="#load" prefHeight="50.0" prefWidth="100.0" text="Load" />
+         </children>
+      </VBox>
+      <TextArea fx:id="txtUt" layoutX="69.0" layoutY="543.0" prefHeight="129.0" prefWidth="700.0" AnchorPane.leftAnchor="70.0" />
+   </children>
+</AnchorPane>

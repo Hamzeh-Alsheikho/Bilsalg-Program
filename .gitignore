@@ -1,0 +1,5 @@
+target/
+.idea
+.idea/
+*.iml
+/bil-konfigurator/hovedmodul/src/main/resources/CarDataComponentsDefaultOLD.dat
